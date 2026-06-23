@@ -29,7 +29,7 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-}
+
 
 
 public function posts() {
@@ -44,3 +44,4 @@ protected $fillable = [
  'image_url',
 ];
 
+}
