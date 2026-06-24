@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 <h2>Fil d'actualité</h2>
 @forelse ($posts as $post)
  <div class="post-card">
@@ -14,6 +15,7 @@
  <small>{{ $post->created_at->format('d/m/Y H:i') }}</small>
  </div>
 @empty
- <p>Aucun post pour le moment.</p>
+
+ <p>Aucun post pour le moment...</p>
 @endforelse
 @endsection
