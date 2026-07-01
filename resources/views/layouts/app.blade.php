@@ -16,6 +16,10 @@
             <h1 class="text-2xl font-bold text-blue-600">
                 LinkUp
             </h1>
+            <li > <a class="nav-link" href="{{route('login.show')}}">Se connected  </a> </li>
+            <li > <a class="nav-link" href="">xxxxxx</a> </li>
+
+
 
             <span class="text-sm text-gray-500">
                 Réseau social Laravel

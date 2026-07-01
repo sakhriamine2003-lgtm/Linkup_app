@@ -7,6 +7,7 @@
     <h2 class="text-3xl font-bold text-gray-800 mb-6">
         Fil d'actualité
     </h2>
+    
 
     @forelse ($posts as $post)
 
@@ -15,8 +16,8 @@
             <div class="flex items-center gap-4 mb-4">
 
                 @if ($post->user->image_url)
-                    <img 
-                        src="{{ $post->user->image_url }}" 
+                    <img
+                        src="{{ $post->user->image_url }}"
                         class="w-14 h-14 rounded-full object-cover border"
                         alt="Photo utilisateur"
                     >
