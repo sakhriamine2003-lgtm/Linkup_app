@@ -17,10 +17,10 @@
             Connectez-vous à votre compte
         </p>
 
-        <form action="/login" method="POST" class="space-y-5">
+        <form action="/login" method="POST">
 
-            <!-- Laravel CSRF -->
-            <!-- @csrf -->
+            <!-- Laravel CSRF  directive-->
+            @csrf
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">
@@ -48,7 +48,7 @@
                 >
             </div>
 
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between mt-2">
                 <label class="flex items-center gap-2 text-sm text-gray-600">
                     <input
                         type="checkbox"
@@ -65,7 +65,7 @@
 
             <button
                 type="submit"
-                class="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition duration-300"
+                class="w-full  mt-6 bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition duration-300"
             >
                 Se connecter
             </button>
@@ -74,7 +74,8 @@
 
         <p class="text-center text-sm text-gray-600 mt-6">
             Vous n'avez pas de compte ?
-            <a href="/register" class="text-blue-600 font-medium hover:underline">
+
+            <a class="text-blue-600 font-medium hover:underline">
                 Créer un compte
             </a>
         </p>
@@ -83,3 +84,4 @@
 
 </body>
 </html>
+

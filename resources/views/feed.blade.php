@@ -7,7 +7,6 @@
     <h2 class="text-3xl font-bold text-gray-800 mb-6">
         Fil d'actualité
     </h2>
-    
 
     @forelse ($posts as $post)
 

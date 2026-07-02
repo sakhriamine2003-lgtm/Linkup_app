@@ -13,17 +13,31 @@
     <!-- Navbar -->
     <nav class="bg-white shadow-md px-8 py-4">
         <div class="max-w-5xl mx-auto flex items-center justify-between">
+
             <h1 class="text-2xl font-bold text-blue-600">
                 LinkUp
             </h1>
-            <li > <a class="nav-link" href="{{route('login.show')}}">Se connected  </a> </li>
-            <li > <a class="nav-link" href="">xxxxxx</a> </li>
 
+            <ul class="flex items-center gap-6">
+                <li>
+                    <a class="text-gray-700 hover:text-blue-600 font-medium"
+                       href="{{ route('login.show') }}">
+                        Se connecter
+                    </a>
+                </li>
 
+                <li>
+                    <a class="text-gray-700 hover:text-blue-600 font-medium"
+                       href="#">
+                        xxxxxx
+                    </a>
+                </li>
+            </ul>
 
             <span class="text-sm text-gray-500">
                 Réseau social Laravel
             </span>
+
         </div>
     </nav>
 
