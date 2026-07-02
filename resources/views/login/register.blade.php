@@ -14,8 +14,8 @@
             Créer un compte
         </h2>
 
-        <form action="{{ route('register.store') }}" method="POST" class="space-y-5">
-            @csrf
+       <form action="{{ route('register.store') }}" method="POST" class="space-y-5">
+    @csrf
 
             <!-- Name -->
             <div>
@@ -29,6 +29,7 @@
                     class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                 >
+
             </div>
 
             <!-- Email -->
@@ -43,6 +44,8 @@
                     class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                 >
+                    @error('email')<p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
+
             </div>
 
             <!-- Password -->
@@ -56,8 +59,9 @@
                     placeholder="Entrer mot de passe"
                     class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
-                >
-            </div>
+                 >
+        @error('password')<p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror            </div>
+
 
             <!-- Button -->
             <button
@@ -69,7 +73,7 @@
 
         <p class="text-center text-sm text-gray-600 mt-5">
             Déjà un compte ?
-            <a href="{{ route('login') }}" class="text-blue-600 font-semibold hover:underline">
+            <a href="{{ route('login.show') }}" class="text-blue-600 font-semibold hover:underline">
                 Se connecter
             </a>
         </p>

@@ -10,15 +10,14 @@
     <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
 
         <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">
-            Connexion
+              Connexion
         </h2>
 
         <p class="text-center text-gray-500 mb-6">
             Connectez-vous à votre compte
         </p>
 
-        <form action="/login" method="POST">
-
+<form method="POST" action="{{ route('login.store') }}">
             <!-- Laravel CSRF  directive-->
             @csrf
 
@@ -33,6 +32,8 @@
                     required
                     class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
+                 @error('email')<p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
+
             </div>
 
             <div>
@@ -46,6 +47,7 @@
                     required
                     class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
+
             </div>
 
             <div class="flex items-center justify-between mt-2">
@@ -75,7 +77,7 @@
         <p class="text-center text-sm text-gray-600 mt-6">
             Vous n'avez pas de compte ?
 
-            <a class="text-blue-600 font-medium hover:underline">
+            <a href="{{ route('register') }}" class="text-blue-600 font-medium hover:underline">
                 Créer un compte
             </a>
         </p>

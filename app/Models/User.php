@@ -36,14 +36,9 @@ public function posts()
     return $this->hasMany(Post::class);
 }
 
-
-//protected $fillable = [
- //'name',
- //'email',
- //'password',
- //'headline',
- //'company',
-// 'image_url',
-//];
-
+protected $fillable = [
+    'name',
+    'email',
+    'password',
+];
 }

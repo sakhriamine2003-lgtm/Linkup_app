@@ -13,11 +13,18 @@ Route::get('/feed',
 [PostController::class, 'index']
 );
 
+// Login
 Route::get('/login', [loginController::class, 'show'])->name('login.show');;
-Route::post('/login', [loginController::class, 'login']);
+Route::post('/login', [loginController::class, 'login'])->name('login.store');;
 
+// Register
+Route::get('/register', [LoginController::class, 'regst'])->name('register');
+Route::post('/register', [LoginController::class, 'register'])->name('register.store');
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/feed', [PostController::class, 'index'])->name('feed');
-// });
+// Logout
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+// Feed protégé
+Route::middleware('auth')->group(function () {
+    Route::get('/feed', [PostController::class, 'index'])->name('feed');
+});
