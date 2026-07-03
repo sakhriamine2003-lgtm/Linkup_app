@@ -18,7 +18,7 @@
                 LinkUp
             </h1>
 
-            <ul class="flex items-center gap-6">
+            <ul class="flex items-center gap-12 ml-[50px]">
                 <li>
                     <a class="text-gray-700 hover:text-blue-600 font-medium"
                        href="{{ route('login.show') }}">
@@ -26,17 +26,32 @@
                     </a>
                 </li>
 
+
+
+
+
+
                 <li>
-                    <a class="text-gray-700 hover:text-blue-600 font-medium"
-                       href="#">
-                        xxxxxx
-                    </a>
+                  <a href="#"
+   class="group flex items-center gap-3 rounded-full border border-gray-200 bg-white px-3 py-2 shadow-sm transition-all duration-300 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md">
+
+    <div class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 text-sm font-bold text-white shadow">
+        {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
+    </div>
+
+    <span class="hidden sm:block text-sm font-semibold text-gray-700 transition group-hover:text-blue-700">
+        {{ auth()->user()->name }}
+    </span>
+
+    <svg class="hidden sm:block h-4 w-4 text-gray-400 transition group-hover:text-blue-600"
+         fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+</a>
                 </li>
             </ul>
 
-            <span class="text-sm text-gray-500">
-                Réseau social Laravel
-            </span>
+
 
         </div>
     </nav>
@@ -44,6 +59,7 @@
     <!-- Content -->
     <main class="py-8">
         @yield('content')
+        @yield('creepost')
     </main>
 
 </body>
