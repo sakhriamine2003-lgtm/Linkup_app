@@ -41,7 +41,27 @@ class loginController extends Controller
 
 
 
-   
+    public function login(Request $r)
+    {
+        $r->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        // 2. vérifier email + password
+        if (Auth::attempt($r->only('email', 'password'))) {
+
+            // حماية session
+            $r->session()->regenerate();
+
+            // ila login صحيح
+            return redirect('/feed');
+        }
+
+
+
+
+
 
 
 
