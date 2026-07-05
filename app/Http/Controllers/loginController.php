@@ -48,13 +48,7 @@ class loginController extends Controller
             'password' => 'required',
         ]);
 
-        // 2. vérifier email + password
         if (Auth::attempt($r->only('email', 'password'))) {
-
-            // حماية session
-            $r->session()->regenerate();
-
-            // ila login صحيح
             return redirect('/feed');
         }
 
@@ -71,9 +65,9 @@ class loginController extends Controller
 
 
         
-//         return back()->withErrors([
-//             'email' => 'Email ou mot de passe incorrect.',
-//         ]);
-//     }
+        return back()->withErrors([
+            'email' => 'Email ou mot de passe incorrect.',
+        ]);
+    }
  }
 
