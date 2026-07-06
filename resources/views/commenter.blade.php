@@ -14,53 +14,6 @@
             Partagez votre avis ou votre remarque.
         </p>
     </div>
-
-    <!-- Nom -->
-    <div class="mb-5">
-        <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
-            Nom complet
-        </label>
-
-        <input
-            type="text"
-            id="name"
-            name="name"
-            value="{{ old('name') }}"
-            class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 text-gray-800
-                   placeholder-gray-400 transition
-                   focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 focus:outline-none"
-            placeholder="Entrez votre nom"
-            required
-        >
-
-        @error('name')
-            <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
-        @enderror
-    </div>
-
-    <!-- Email -->
-    <div class="mb-5">
-        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
-            Adresse email
-        </label>
-
-        <input
-            type="email"
-            id="email"
-            name="email"
-            value="{{ old('email') }}"
-            class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 text-gray-800
-                   placeholder-gray-400 transition
-                   focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 focus:outline-none"
-            placeholder="exemple@email.com"
-            required
-        >
-
-        @error('email')
-            <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
-        @enderror
-    </div>
-
     <!-- Commentaire -->
     <div class="mb-6">
         <label for="content" class="block text-sm font-semibold text-gray-700 mb-2">

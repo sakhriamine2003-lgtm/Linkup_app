@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
 
 //  commenter
 Route::get('/commenter', [CommentController::class, 'AjouteCommenter'])->name('AjouteCommenter');;
-Route::post('/commenter', [CommentController::class, 'AfficherCommenter'])->name('AfficherCommenter');;
+Route::post('/commenter', [CommentController::class, 'SaveComment'])->name('SaveComment');;
 
 
 

@@ -36,6 +36,17 @@ public function posts()
     return $this->hasMany(Post::class);
 }
 
+
+public function comment()
+{
+    return $this->hasMany(comment::class);
+}
+
+
+
+
+
+
 protected $fillable = [
     'name',
     'email',
