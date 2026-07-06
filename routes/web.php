@@ -4,41 +4,32 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CommentController;
-use Symfony\Component\HttpKernel\Profiler\Profile;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/feed',
-[PostController::class, 'index']
-);
+Route::middleware('auth')->group(function () {
+    Route::get('/feed', [PostController::class, 'index'])->name('feed');
 
+    Route::post('/posts/{post}/comments', [CommentController::class, 'SaveComment'])
+        ->name('SaveComment');
+});
 
 // Login
-Route::get('/login', [loginController::class, 'show'])->name('login.show');;
-Route::post('/login', [loginController::class, 'login'])->name('login.store');;
+Route::get('/login', [LoginController::class, 'show'])->name('login.show');
+Route::post('/login', [LoginController::class, 'login'])->name('login.store');
 
 // Register
 Route::get('/register', [LoginController::class, 'regst'])->name('register');
 Route::post('/register', [LoginController::class, 'register'])->name('register.store');
 
 // Logout
-// Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+// Route::resource('/commenter', CommentController::class);
 
-// Feed protégé
-Route::middleware('auth')->group(function () {
-    Route::get('/feed', [PostController::class, 'index'])->name('index');
-    Route::get('/feedcreate', [PostController::class, 'create'])->name('create');
-    Route::post('/feed', [PostController::class, 'store'])->name('feed.store');
-});
+Route::get('/commenter/{post}', [CommentController::class, 'AjouteCommenter'])
+    ->name('AjouteCommenter');
 
-
-//  commenter
-Route::get('/commenter', [CommentController::class, 'AjouteCommenter'])->name('AjouteCommenter');;
-Route::post('/commenter', [CommentController::class, 'SaveComment'])->name('SaveComment');;
-
-
-
-
-
+Route::post('/posts/{post}/comments', [CommentController::class, 'SaveComment'])
+    ->name('SaveComment');

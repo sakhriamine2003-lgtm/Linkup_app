@@ -67,9 +67,14 @@
             <small class="text-gray-400">
                 {{ $post->created_at->format('d/m/Y H:i') }}
             </small>
+      {{-- <form action="{{ route('AjouteCommenter' )}}" method="POST" >
 
-            <a class="mx-12" href="{{route('AjouteCommenter')}}"> commenter </a>
-
+                <button   type="submit">commenter</button>
+                <input type="hidden" name="post_id" value="{{$post->id}}">
+</form> --}}
+<a href="{{ route('AjouteCommenter', $post->id) }}">
+    Ajouter commentaire
+</a>
 
         </div>
 

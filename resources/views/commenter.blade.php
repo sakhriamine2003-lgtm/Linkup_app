@@ -1,10 +1,11 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 
-{{-- <form action="{{ route('comments.store') }}" method="POST" --}}
+<form action="{{ route('SaveComment' , $post->id ) }}" method="POST" >
 {{-- class="max-w-2xl mx-auto mt-10 bg-white border border-gray-200 rounded-2xl shadow-lg p-6 sm:p-8"> --}}
 
     @csrf
+ {{-- <input type="hidden" name="post_id" value="{{'post_id'}}"> --}}
 
     <div class="mb-8 text-center">
         <h2 class="text-3xl font-bold text-gray-900">
@@ -29,9 +30,9 @@
                    focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 focus:outline-none"
             placeholder="Écrivez votre commentaire..."
             required
-        >{{ old('content') }}</textarea>
+        >{{ old('conntenu') }}</textarea>
 
-        @error('content')
+        @error('conntenu')
             <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
         @enderror
     </div>

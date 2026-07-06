@@ -21,6 +21,12 @@ class PostController extends Controller
 
 
 
+//  public function UserComments()
+// {
+//     $posts = Post::with(['user', 'comments'])->latest()->get();
+
+//     return view('feed', compact('posts'));
+// }
 
 
 
@@ -32,7 +38,9 @@ class PostController extends Controller
 
 
 
- 
+
+
+
 public function create(){
     return view('CreePost');
 }
