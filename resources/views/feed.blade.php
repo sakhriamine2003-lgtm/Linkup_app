@@ -68,6 +68,9 @@
                 {{ $post->created_at->format('d/m/Y H:i') }}
             </small>
 
+            <a class="mx-12" href="{{route('AjouteCommenter')}}"> commenter </a>
+
+
         </div>
 
     @empty

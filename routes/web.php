@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CommentController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
 Route::get('/', function () {
@@ -14,8 +15,6 @@ Route::get('/feed',
 );
 
 
-
-
 // Login
 Route::get('/login', [loginController::class, 'show'])->name('login.show');;
 Route::post('/login', [loginController::class, 'login'])->name('login.store');;
@@ -25,7 +24,7 @@ Route::get('/register', [LoginController::class, 'regst'])->name('register');
 Route::post('/register', [LoginController::class, 'register'])->name('register.store');
 
 // Logout
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+// Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Feed protégé
 Route::middleware('auth')->group(function () {
@@ -33,5 +32,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/feedcreate', [PostController::class, 'create'])->name('create');
     Route::post('/feed', [PostController::class, 'store'])->name('feed.store');
 });
+
+
+//  commenter
+Route::get('/commenter', [CommentController::class, 'AjouteCommenter'])->name('AjouteCommenter');;
+Route::post('/commenter', [CommentController::class, 'AfficherCommenter'])->name('AfficherCommenter');;
+
+
+
 
 
