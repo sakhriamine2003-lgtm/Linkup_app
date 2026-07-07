@@ -43,10 +43,7 @@
         {{ auth()->user()->name }}
     </span>
 
-    <svg class="hidden sm:block h-4 w-4 text-gray-400 transition group-hover:text-blue-600"
-         fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-    </svg>
+  
 </a>
                 </li>
             </ul>

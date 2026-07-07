@@ -12,14 +12,14 @@ class CommentController extends Controller
 {
     public function AjouteCommenter(Post $post)
 {
-    // dd($post);
     return view('commenter', compact('post'));
 }
+
+
 
 public function SaveComment(Request $request, Post $post)
 {
     // dd($request);
-    // dd($post);
     $request->validate([
         'content' => 'required|string|max:500',
 
@@ -32,6 +32,15 @@ public function SaveComment(Request $request, Post $post)
     ]);
 
     return redirect()->route('feed');
+}
+
+
+
+public function AffCommenter($id)
+{
+    $post = Post::with(['user', 'comments.user'])->findOrFail($id);
+
+    return view('AffCommenter', compact('post'));
 }
 
 }

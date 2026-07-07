@@ -25,11 +25,19 @@ Route::get('/register', [LoginController::class, 'regst'])->name('register');
 Route::post('/register', [LoginController::class, 'register'])->name('register.store');
 
 // Logout
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+// Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // Route::resource('/commenter', CommentController::class);
 
-Route::get('/commenter/{post}', [CommentController::class, 'AjouteCommenter'])
-    ->name('AjouteCommenter');
 
-Route::post('/posts/{post}/comments', [CommentController::class, 'SaveComment'])
-    ->name('SaveComment');
+
+
+Route::get('/commenter/{post}', [CommentController::class, 'AjouteCommenter'])->name('AjouteCommenter');
+
+Route::post('/posts/{post}/comments', [CommentController::class, 'SaveComment'])->name('SaveComment');
+
+
+
+
+Route::get('/AffCommenter/{post}', [CommentController::class, 'AffCommenter'])->name('PostUserComments');
+
+

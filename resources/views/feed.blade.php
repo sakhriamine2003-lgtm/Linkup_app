@@ -72,9 +72,15 @@
                 <button   type="submit">commenter</button>
                 <input type="hidden" name="post_id" value="{{$post->id}}">
 </form> --}}
-<a href="{{ route('AjouteCommenter', $post->id) }}">
+<a class="mx-12" href="{{ route('AjouteCommenter', $post->id) }}">
     Ajouter commentaire
 </a>
+
+<a class="mx-12" href="{{ route('PostUserComments', $post->id) }}">
+    Lire commentaire
+</a>
+
+
 
         </div>
 

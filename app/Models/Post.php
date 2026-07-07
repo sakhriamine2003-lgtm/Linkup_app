@@ -17,7 +17,7 @@ public function user()
  }
 
 
- public function comment()
+ public function comments()
  {
  return $this->hasMany(comment::class);
  }

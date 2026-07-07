@@ -2,11 +2,8 @@
 
 
 <form action="{{ route('SaveComment' , $post->id ) }}" method="POST" >
-{{-- class="max-w-2xl mx-auto mt-10 bg-white border border-gray-200 rounded-2xl shadow-lg p-6 sm:p-8"> --}}
 
     @csrf
- {{-- <input type="hidden" name="post_id" value="{{'post_id'}}"> --}}
-
     <div class="mb-8 text-center">
         <h2 class="text-3xl font-bold text-gray-900">
             Ajouter un commentaire
