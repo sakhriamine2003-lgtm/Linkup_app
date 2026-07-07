@@ -9,14 +9,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+// Feed protégé
 Route::middleware('auth')->group(function () {
     Route::get('/feed', [PostController::class, 'index'])->name('feed');
-
-    Route::post('/posts/{post}/comments', [CommentController::class, 'SaveComment'])
-        ->name('SaveComment');
+    Route::get('/feedcreate', [PostController::class, 'create'])->name('create');
+    Route::post('/feed', [PostController::class, 'store'])->name('feed.store');
 });
 
-// Login
+
+
 Route::get('/login', [LoginController::class, 'show'])->name('login.show');
 Route::post('/login', [LoginController::class, 'login'])->name('login.store');
 
@@ -35,9 +37,8 @@ Route::get('/commenter/{post}', [CommentController::class, 'AjouteCommenter'])->
 
 Route::post('/posts/{post}/comments', [CommentController::class, 'SaveComment'])->name('SaveComment');
 
-
-
-
 Route::get('/AffCommenter/{post}', [CommentController::class, 'AffCommenter'])->name('PostUserComments');
+
+
 
 

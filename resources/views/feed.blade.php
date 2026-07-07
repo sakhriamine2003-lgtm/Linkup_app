@@ -67,17 +67,16 @@
             <small class="text-gray-400">
                 {{ $post->created_at->format('d/m/Y H:i') }}
             </small>
-      {{-- <form action="{{ route('AjouteCommenter' )}}" method="POST" >
 
-                <button   type="submit">commenter</button>
-                <input type="hidden" name="post_id" value="{{$post->id}}">
-</form> --}}
+
+            
+
 <a class="mx-12" href="{{ route('AjouteCommenter', $post->id) }}">
     Ajouter commentaire
 </a>
 
 <a class="mx-12" href="{{ route('PostUserComments', $post->id) }}">
-    Lire commentaire
+    Lire commentaire ({{ $post->comments->count() }})
 </a>
 
 
