@@ -26,10 +26,6 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.store');
 Route::get('/register', [LoginController::class, 'regst'])->name('register');
 Route::post('/register', [LoginController::class, 'register'])->name('register.store');
 
-// Logout
-// Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-// Route::resource('/commenter', CommentController::class);
-
 
 
 

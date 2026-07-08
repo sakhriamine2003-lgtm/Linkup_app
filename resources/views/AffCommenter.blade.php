@@ -8,7 +8,7 @@
 
             {{-- Avatar --}}
             <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shrink-0">
-                {{ strtoupper(substr($comment->user->name ?? 'U', 0, 1)) }}
+                {{ strtoupper(substr($comment->user->name , 0, 1)) }}
             </div>
 
             {{-- Comment content --}}
@@ -17,7 +17,7 @@
                 {{-- Name + time --}}
                 <div class="flex items-center gap-2">
                     <h4 class="font-semibold text-gray-900 text-sm">
-                        {{ '@' . ($comment->user->name ?? 'Utilisateur') }}
+                        {{($comment->user->name ?? 'Utilisateur') }}
                     </h4>
 
                     <span class="text-xs text-gray-500">
@@ -34,14 +34,24 @@
 
 
                 {{-- Actions --}}
-                <div class="flex items-center gap-5 mt-2 text-gray-600 text-sm">
-                    <button class="hover:text-blue-600">
-                        👍
-                    </button>
+       <div class="flex items-center gap-5 mt-2 text-gray-600 text-sm">
+<button>
+    <img
+        src="https://cdn-icons-png.flaticon.com/128/126/126473.png"
+        alt="Like"
+        class="w-5 h-5"
+    >
+</button>
 
-                    <button class="hover:text-red-500">
-                        👎
-                    </button>
+<button>
+    <img
+        src="https://cdn-icons-png.flaticon.com/128/126/126504.png"
+        alt="Dislike"
+        class="w-5 h-5"
+    >
+</button>
+
+
 
                     <button class="font-semibold hover:text-blue-600">
                         Reply

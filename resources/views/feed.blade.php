@@ -53,6 +53,15 @@
                         {{ $post->user->name }}
                     </h3>
 
+                    {{-- -------------------------------------------------------- --}}
+                @if ($post->user->open_to_work == true)
+                <p> 🟢 Open To Work</p>
+
+                @endif
+
+                    {{-- -------------------------------------------------------- --}}
+
+
                     <p class="text-sm text-gray-500">
                         {{ $post->user->headline ?? 'Utilisateur LinkUp' }}
                     </p>
@@ -69,7 +78,7 @@
             </small>
 
 
-            
+
 
 <a class="mx-12" href="{{ route('AjouteCommenter', $post->id) }}">
     Ajouter commentaire
@@ -78,6 +87,25 @@
 <a class="mx-12" href="{{ route('PostUserComments', $post->id) }}">
     Lire commentaire ({{ $post->comments->count() }})
 </a>
+
+      <div class="flex items-center gap-5 mt-2 text-gray-600 text-sm   mt-6">
+<button>
+    <img
+        src="https://cdn-icons-png.flaticon.com/128/126/126473.png"
+        alt="Like"
+        class="w-5 h-5"
+    >
+</button>
+
+<button>
+    <img
+        src="https://cdn-icons-png.flaticon.com/128/126/126504.png"
+        alt="Dislike"
+        class="w-5 h-5"
+    >
+</button>
+                </div>
+
 
 
 

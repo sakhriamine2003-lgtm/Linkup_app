@@ -73,7 +73,7 @@
 
         <p class="text-center text-sm text-gray-600 mt-5">
             Déjà un compte ?
-            <a href="{{ route('login.show') }}" class="text-blue-600 font-semibold hover:underline">
+            <a href="" class="text-blue-600 font-semibold hover:underline">
                 Se connecter
             </a>
         </p>

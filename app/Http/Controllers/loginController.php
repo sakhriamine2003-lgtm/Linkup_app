@@ -22,25 +22,22 @@ class loginController extends Controller
     }
 
 
-    
+
     public function register(Request $r)
     {
-    
+
         $user = User::create([
             'name' => $r->name,
             'email' => $r->email,
             'password' => Hash::make($r->password),
-        ]);        
+        ]);
 
         return redirect('/login');
     }
 
 
 
-
-
-
-
+    
     public function login(Request $r)
     {
         $r->validate([
@@ -64,7 +61,7 @@ class loginController extends Controller
 
 
 
-        
+
         return back()->withErrors([
             'email' => 'Email ou mot de passe incorrect.',
         ]);
