@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ProfilController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,5 +37,6 @@ Route::post('/posts/{post}/comments', [CommentController::class, 'SaveComment'])
 Route::get('/AffCommenter/{post}', [CommentController::class, 'AffCommenter'])->name('PostUserComments');
 
 
-
+// profil
+Route::get('/Profile' ,[ProfilController::class ,'AffichageProfil'])->name('AffichageProfil');
 

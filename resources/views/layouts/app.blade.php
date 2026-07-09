@@ -29,10 +29,8 @@
 
 
 
-
-
                 <li>
-                  <a href="#"
+                  <a href="{{route('AffichageProfil')}}"
    class="group flex items-center gap-3 rounded-full border border-gray-200 bg-white px-3 py-2 shadow-sm transition-all duration-300 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md">
 
     <div class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 text-sm font-bold text-white shadow">
@@ -43,7 +41,7 @@
         {{ auth()->user()->name }}
     </span>
 
-  
+
 </a>
                 </li>
             </ul>
