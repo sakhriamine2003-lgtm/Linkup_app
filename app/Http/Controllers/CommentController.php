@@ -19,18 +19,15 @@ class CommentController extends Controller
 
 
 
-public function SaveComment(Request $request, Post $post)
+public function SaveComment(Request $r, Post $post)
 {
-    // dd($request);
-    $request->validate([
+    $r->validate([
         'conntenu' => 'required|string|max:500',
-
     ]);
-
     Comment::create([
         'post_id' => $post->id,
-        'user_id' => $request->user()->id,
-        'conntenu' => $request->content,
+        'user_id' => $r->user()->id,
+        'conntenu' => $r->conntenu,
     ]);
 
     return redirect()->route('feed');
@@ -38,11 +35,13 @@ public function SaveComment(Request $request, Post $post)
 
 
 
+
+
 public function AffCommenter($id)
 {
     $post = Post::with(['user', 'comments.user'])->findOrFail($id);
 
-    return view('AffCommenter');
+    return view('AffCommenter ' ,compact($post));
 }
 
 }

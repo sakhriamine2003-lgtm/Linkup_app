@@ -64,16 +64,21 @@
 
 
 
-        @endforeach
+@endforeach
 
 
             </div>
 
             <div class="bg-white rounded-xl shadow p-5 text-center">
                 <h2 class="text-2xl font-bold text-green-600">
-                    Nombre commentaires
+                    Nombre commentaires :
+
                 </h2>
-                <p class="text-gray-500 text-sm">Commentaires</p>
+
+
+                <p class="text-gray-500 text-sm">Commentaires :
+                    {{$post->comments->count()}}
+                </p>
             </div>
 
             <div class="bg-white rounded-xl shadow p-5 text-center">

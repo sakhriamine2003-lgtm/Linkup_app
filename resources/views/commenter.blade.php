@@ -1,9 +1,9 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 
-<form action="{{ route('SaveComment' , $post->id ) }}" method="POST" >
-
+<form action="{{ route('SaveComment', $post->id) }}" method="POST">
     @csrf
+
     <div class="mb-8 text-center">
         <h2 class="text-3xl font-bold text-gray-900">
             Ajouter un commentaire
@@ -20,7 +20,7 @@
 
         <textarea
             id="content"
-            name="content"
+            name="conntenu"
             rows="5"
             class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 text-gray-800
                    placeholder-gray-400 transition resize-none
@@ -30,7 +30,7 @@
         >{{ old('conntenu') }}</textarea>
 
         @error('conntenu')
-            <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
+            <p class="text-red-500 text-sm mt-2">{{$message }}</p>
         @enderror
     </div>
 
