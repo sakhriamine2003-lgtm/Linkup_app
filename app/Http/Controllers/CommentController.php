@@ -41,7 +41,7 @@ public function AffCommenter($id)
 {
     $post = Post::with(['user', 'comments.user'])->findOrFail($id);
 
-    return view('AffCommenter ' ,compact($post));
+    return view('AffCommenter ' ,compact('post'));
 }
 
 }
