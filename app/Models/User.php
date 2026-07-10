@@ -48,6 +48,10 @@ public function comment()
 }
 
 
+ public function like()
+ {
+ return $this->hasMany(Like::class);
+ }
 
 
 

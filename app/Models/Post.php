@@ -22,6 +22,12 @@ public function user()
  return $this->hasMany(comment::class);
  }
 
+
+ public function like()
+ {
+ return $this->hasMany(Like::class);
+ }
+
  }
 
 

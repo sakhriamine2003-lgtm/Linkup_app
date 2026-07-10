@@ -34,13 +34,9 @@ public function SaveComment(Request $r, Post $post)
 }
 
 
-
-
-
 public function AffCommenter($id)
 {
     $post = Post::with(['user', 'comments.user'])->findOrFail($id);
-
     return view('AffCommenter ' ,compact('post'));
 }
 
