@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ProfilController;
 
 Route::get('/', function () {
@@ -40,3 +41,11 @@ Route::get('/AffCommenter/{post}', [CommentController::class, 'AffCommenter'])->
 // profil
 Route::get('/Profile' ,[ProfilController::class ,'AffichageProfil'])->name('AffichageProfil');
 
+
+
+
+// Likes
+Route::get('/posts/{post}/Like' ,[LikeController::class ,'AddLike'])->name('AddLike');
+
+
+Route::get('/test' ,[PostController::class ,'afficherInfo']);

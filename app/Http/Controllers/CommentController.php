@@ -40,4 +40,10 @@ public function AffCommenter($id)
     return view('AffCommenter ' ,compact('post'));
 }
 
+function modifierComment(){
+    
+}
+
+
+
 }

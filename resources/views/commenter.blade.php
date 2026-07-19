@@ -26,7 +26,7 @@
                    placeholder-gray-400 transition resize-none
                    focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 focus:outline-none"
             placeholder="Écrivez votre commentaire..."
-            required
+          
         >{{ old('conntenu') }}</textarea>
 
         @error('conntenu')
